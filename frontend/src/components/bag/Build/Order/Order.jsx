@@ -18,7 +18,6 @@ const Order = () => {
         <div className={css.orderSection__container__imgSection}>
           <img
             src="https://www.instyle.com/thmb/Q5SV4V_sMRyRw8gCbTL1kS7qVik=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/032620-jean-jackets-01-2000-4409e181297044f89514af203f462eb3.jpg"
-            alt=""
           />
           <h4>Jeans jacket</h4>
         </div>
@@ -32,7 +31,6 @@ const Order = () => {
                 <img
                   src={arrow_down}
                   // src="https://raw.githubusercontent.com/AmgalanAmga/mepo-af-project/7856e75e652247221564c6949ec8855012a93113/frontend/src/assets/images/arrow-down-black.svg"
-                  alt=""
                 />
               </button>
               <DropDown change={setSize} />
@@ -46,7 +44,7 @@ const Order = () => {
               />
             </div>
             <p>USD 650.00</p>
-            <button>remove</button>
+            <button className={css.removeBtn}>Remove</button>
           </div>
         </div>
         {/* second */}
@@ -55,7 +53,6 @@ const Order = () => {
             <img
               src={close_btn}
               // src="https://raw.githubusercontent.com/AmgalanAmga/mepo-af-project/7856e75e652247221564c6949ec8855012a93113/frontend/src/assets/images/close-black.svg"
-              alt=""
             />
           </button>
           <h3>Wide leg pants</h3>
