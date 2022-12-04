@@ -1,0 +1,215 @@
+@import "./variables.scss";
+
+.header {
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  background-color: $bg;
+  max-height: $headerHeight;
+  justify-content: space-between;
+  &_content {
+    height: 100%;
+    padding: 0 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include maxWidthPosition;
+    // ______responsive______
+    @include breakpoint(xl) {
+      padding: 0 40px;
+    }
+    @include breakpoint(lg) {
+      padding: 0 30px;
+    }
+    @include breakpoint(md) {
+      padding: 0 20px;
+    }
+    &_l {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      height: 100%;
+      &_image {
+        margin-left: -60px;
+        height: 68px;
+        // ______responsive______
+        @include breakpoint(lg) {
+          margin-left: -40px;
+          height: 48px;
+        }
+      }
+      &_links {
+        display: flex;
+        width: 243px;
+        justify-content: space-between;
+        position: relative;
+        // ______responsive______
+        @include breakpoint(xl) {
+          margin-left: -30px;
+        }
+        @include breakpoint(lg) {
+          margin-left: -30px;
+          width: 190px;
+        }
+        span {
+          transition: 0.2s;
+          letter-spacing: 0.1em;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: $RobotoCondensed;
+          // ______responsive______
+        }
+        &_p {
+          position: absolute;
+          left: 0;
+          right: 10%;
+          width: 80px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      &_links span:hover {
+        font-weight: 510;
+        color: #000;
+      }
+    }
+    &_r {
+      display: flex;
+      width: 256px;
+      height: 21px;
+      align-items: center;
+      margin-left: 10px;
+      justify-content: space-between;
+      // ______responsive______
+      @include breakpoint(lg) {
+        width: 240px;
+      }
+      button {
+        letter-spacing: 0.1em;
+        transition: 0.2s;
+        color: #746c6c;
+        font-family: $RobotoCondensed;
+      }
+      span {
+        font-size: 18px;
+        color: #746c6c;
+      }
+      div {
+        display: flex;
+        align-items: center;
+      }
+      p:hover {
+        font-weight: 600;
+        color: #000;
+      }
+    }
+    &_r button:hover {
+      font-weight: 600;
+      color: #000;
+    }
+  }
+  // ______responsive______
+  @include breakpoint(sm) {
+    display: none;
+  }
+}
+.mobileHeader {
+  @include breakpoint(sm) {
+    display: flex;
+  }
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  display: none;
+  position: fixed;
+  align-items: center;
+  background-color: transparent;
+  justify-content: space-between;
+  div {
+    cursor: pointer;
+  }
+  &_icon {
+    width: 68px;
+    height: 68px;
+    @include breakpoint(xs) {
+      width: 55px;
+      height: 55px;
+    }
+  }
+  &_image_container {
+    width: 104px;
+    height: 46px;
+  }
+}
+
+.mobileDrop {
+  @include breakpoint(sm) {
+    display: block;
+  }
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  display: none;
+  height: 100vh;
+  position: fixed;
+  background-color: #000;
+  &_header {
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    &_closeIcon {
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+    &_image_container {
+      width: 104px;
+      height: 46px;
+    }
+    &_right {
+      margin-right: 20px;
+    }
+  }
+  &_body {
+    display: flex;
+    row-gap: 15px;
+    padding-left: 15px;
+    flex-direction: column;
+    a {
+      font-size: 36px;
+      color: #fff;
+      font-weight: 300;
+      @include breakpoint(sm){
+        font-size: 20px;
+      }
+    }
+    &_langChange {
+      display: flex;
+      color: #fff;
+      span {
+        margin: 0 5px;
+        font-size: 36px;
+        @include breakpoint(sm){
+          font-size: 20px;
+        }
+      }
+      button {
+        font-size: 36px;
+        color: #fff;
+        @include breakpoint(sm){
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+// font Roboto
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+// font Roboto Condensed
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap");
+
+$Roboto: "Roboto", sans-serif;
+$RobotoCondensed: "Roboto Condensed", sans-serif;
+
+// colors
+
+$bg: #ffffff;
+$light: #ffffff;
+$primary: #f2f2f2;
+$accountBag: #919091;
+$dark: rgb(29, 29, 29);
+$footerTextColor: #919091;
+$formGrayBackground: #f2f2f2;
+$formInputBackground: #ffffff;
+$formBtnBackground: #222222;
+$formPrimaryTextColor: #919091;
+$formSecondaryTextColor: #222222;
+$formContainerBackground: rgba(0, 0, 0, 0.5);
+
+// $spacing
+
+$spacing-md: 16px;
+$spacing-lg: 32px;
+
+$borderRadius: 12px;
+$headerIphoneHeight: 64px;
+$headerHeight: 100px;
+$maxWidth: 1920px;
+
+@mixin breakpoint($point) {
+  @if $point == xs {
+    @media (max-width: 300px) {
+      @content;
+    }
+  }
+  @if $point == sm {
+    @media (max-width: 680px) {
+      @content;
+    }
+  }
+  @if $point == md {
+    @media (max-width: 833px) {
+      @content;
+    }
+  }
+  @if $point == lg {
+    @media (max-width: 1024px) {
+      @content;
+    }
+  }
+  @if $point == xl {
+    @media (max-width: 1280px) {
+      @content;
+    }
+  }
+  @if $point == xxl {
+    @media (max-width: 1480px) {
+      @content;
+    }
+  }
+}
+@mixin maxWidthPosition {
+  max-width: $maxWidth;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+@mixin perfectCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,20 @@
+.loading {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  height: 100vh;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(#000, 0.2);
+  div {
+    width: 400px;
+  }
+  h4 {
+    color: #fff;
+    font-size: 24px;
+  }
+}

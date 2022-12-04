@@ -1,0 +1,206 @@
+@import "variables.scss";
+
+@mixin columnElement {
+  display: flex;
+  flex-direction: column;
+}
+@mixin inputElement {
+  @include breakpoint(lg) {
+    height: 50px;
+    font-size: 14px;
+  }
+  @include breakpoint(sm) {
+    height: 40px;
+  }
+  height: 60px;
+  border: none;
+  padding: 10px;
+  outline: none;
+  padding-right: 50px;
+  background-color: $formInputBackground;
+}
+@mixin font700 {
+  @include breakpoint(lg) {
+    font-size: 13px;
+    font-weight: 600;
+  }
+  font-size: 16px;
+  font-weight: 700;
+}
+@mixin btnTrans {
+  color: $formPrimaryTextColor;
+  background-color: transparent;
+}
+.form {
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  &_container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    @include perfectCenter;
+    &_back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: $formContainerBackground;
+    }
+    &_main {
+      width: 100%;
+      z-index: 30;
+      margin: 0 10px;
+      max-width: 500px;
+      padding: 40px 75px;
+      position: relative;
+      align-items: center;
+      @include columnElement;
+      background-color: $formGrayBackground;
+      @include breakpoint(lg) {
+        max-width: 400px;
+        padding: 20px 55px;
+      }
+      @include breakpoint(sm) {
+        max-width: 370px;
+        padding: 15px 35px;
+      }
+      .closeIcon {
+        top: 30px;
+        right: 30px;
+        cursor: pointer;
+        position: absolute;
+      }
+      h1 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        @include breakpoint(lg) {
+          font-size: 28px;
+          font-weight: 500;
+          margin-bottom: 10px;
+        }
+        @include breakpoint(sm) {
+          font-size: 25px;
+        }
+      }
+      > div {
+        display: flex;
+        column-gap: 10px;
+        margin-bottom: 37px;
+        @include breakpoint(lg) {
+          margin-bottom: 28px;
+        }
+        @include breakpoint(sm) {
+          margin-bottom: 22px;
+        }
+        span {
+          @include breakpoint(lg) {
+            font-weight: 500;
+          }
+          font-weight: 600;
+          color: $formPrimaryTextColor;
+        }
+        button {
+          border: none;
+          cursor: pointer;
+          @include font700;
+          background-color: transparent;
+          color: $formSecondaryTextColor;
+        }
+      }
+      form {
+        @include breakpoint(lg) {
+          row-gap: 15px;
+          margin-bottom: 15px;
+        }
+        width: 100%;
+        row-gap: 30px;
+        margin-bottom: 30px;
+        @include columnElement;
+        div {
+          @include columnElement;
+          label {
+            @include breakpoint(lg) {
+              font-size: 13px;
+            }
+            margin-bottom: 10px;
+          }
+        }
+        .mailNumberBox input {
+          @include inputElement;
+        }
+        @include breakpoint(lg) {
+          .mailNumberBox input::placeholder {
+            font-size: 14px;
+          }
+        }
+        .passwordBox div {
+          @include inputElement;
+          input {
+            height: 100%;
+            border: none;
+            outline: none;
+          }
+          @include breakpoint(lg) {
+            input::placeholder {
+              font-size: 14px;
+            }
+          }
+        }
+        .passwordBox div {
+          position: relative;
+          span {
+            top: 50%;
+            right: 10px;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+            @include btnTrans;
+            position: absolute;
+            @include perfectCenter;
+            transform: translateY(-50%);
+            @include breakpoint(lg) {
+              font-size: 18px;
+            }
+          }
+        }
+        .mailNumberBox input,
+        .passwordBox input {
+          font-size: 16px;
+          color: $formPrimaryTextColor;
+        }
+        .submitBtn {
+          @include breakpoint(lg) {
+            height: 50px;
+          }
+          height: 60px;
+          @include font700;
+          color: #ffffff;
+          text-transform: uppercase;
+          background-color: $formBtnBackground;
+        }
+      }
+      button {
+        border: none;
+        cursor: pointer;
+        @include btnTrans;
+        text-decoration: underline;
+        @include breakpoint(lg) {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+.error {
+  text-align: right;
+  margin-top: 10px;
+  color: #c50c0c;
+}
+.success {
+  text-align: center;
+  color: green;
+}
