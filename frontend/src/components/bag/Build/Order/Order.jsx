@@ -9,7 +9,7 @@ const Order = () => {
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState("XXL");
   const quantityFuction = number => {
-    if(number < 0) return;
+    if(number < 1) return;
     setQuantity(number);
   }
   return (
